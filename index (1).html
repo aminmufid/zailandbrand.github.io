@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zailand Brand | Food Service Supplies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; font-weight: 400; color: #1a1a1a; background: #ffffff; }
+
+    /* NAV */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; border-bottom: 0.5px solid #e0e0e0; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 22px; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; color: #888; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+    .nav-links a:hover { color: #1a1a1a; }
+    .nav-cta { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; border: 0.5px solid #ccc; padding: 9px 20px; border-radius: 4px; background: transparent; color: #1a1a1a; cursor: pointer; font-family: 'DM Sans', sans-serif; text-decoration: none; }
+    .nav-cta:hover { background: #f5f5f5; }
+
+    /* HERO */
+    .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 380px; }
+    .hero-left { padding: 60px 40px; display: flex; flex-direction: column; justify-content: center; border-right: 0.5px solid #e0e0e0; }
+    .eyebrow { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 16px; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: 42px; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
+    h1 em { font-style: italic; }
+    .hero-sub { font-size: 15px; color: #666; line-height: 1.7; max-width: 360px; margin-bottom: 32px; }
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { background: #1a1a1a; color: #fff; border: none; padding: 12px 28px; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; font-family: 'DM Sans', sans-serif; border-radius: 4px; text-decoration: none; display: inline-block; }
+    .btn-primary:hover { background: #333; }
+    .btn-secondary { background: transparent; color: #1a1a1a; border: 0.5px solid #ccc; padding: 12px 28px; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; font-family: 'DM Sans', sans-serif; border-radius: 4px; text-decoration: none; display: inline-block; }
+    .btn-secondary:hover { background: #f5f5f5; }
+    .hero-right { padding: 40px; display: flex; align-items: center; justify-content: center; background: #f9f9f9; }
+    .stat-stack { display: flex; flex-direction: column; gap: 24px; width: 100%; max-width: 280px; }
+    .stat-card { background: #fff; border: 0.5px solid #e0e0e0; border-radius: 12px; padding: 20px 24px; }
+    .stat-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #aaa; margin-bottom: 6px; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: 32px; letter-spacing: -0.02em; }
+    .stat-note { font-size: 12px; color: #888; margin-top: 4px; }
+
+    /* CATEGORIES */
+    .divider { height: 0.5px; background: #e0e0e0; }
+    .cats { padding: 56px 40px; }
+    .section-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 32px; }
+    .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #e0e0e0; border: 0.5px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .cat-item { background: #fff; padding: 28px 24px; cursor: pointer; }
+    .cat-item:hover { background: #f9f9f9; }
+    .cat-icon { font-size: 22px; color: #888; margin-bottom: 14px; }
+    .cat-name { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+    .cat-desc { font-size: 12px; color: #888; line-height: 1.5; }
+
+    /* WHY */
+    .why { display: grid; grid-template-columns: 1fr 1fr; border-top: 0.5px solid #e0e0e0; }
+    .why-left { padding: 56px 40px; border-right: 0.5px solid #e0e0e0; }
+    .why-title { font-family: 'DM Serif Display', serif; font-size: 32px; line-height: 1.15; margin-bottom: 32px; letter-spacing: -0.01em; }
+    .pillars { display: flex; flex-direction: column; gap: 20px; }
+    .pillar { display: flex; gap: 16px; align-items: flex-start; }
+    .pillar-icon { font-size: 20px; color: #888; margin-top: 2px; flex-shrink: 0; }
+    .pillar strong { display: block; font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .pillar span { font-size: 13px; color: #666; line-height: 1.6; }
+    .why-right { padding: 56px 40px; background: #f9f9f9; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+    .quote { font-family: 'DM Serif Display', serif; font-size: 20px; font-style: italic; line-height: 1.5; color: #1a1a1a; }
+    .quote-attr { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #aaa; }
+
+    /* CONTACT */
+    .contact-strip { border-top: 0.5px solid #e0e0e0; padding: 48px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .contact-title { font-family: 'DM Serif Display', serif; font-size: 26px; margin-bottom: 8px; }
+    .contact-sub { font-size: 14px; color: #666; }
+    .contact-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .contact-email { font-size: 13px; color: #888; }
+
+    /* FOOTER */
+    footer { border-top: 0.5px solid #e0e0e0; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: 'DM Serif Display', serif; font-size: 16px; }
+    .footer-copy { font-size: 12px; color: #aaa; }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 40px 20px; border-right: none; border-bottom: 0.5px solid #e0e0e0; }
+      h1 { font-size: 32px; }
+      .hero-right { padding: 32px 20px; }
+      .cats { padding: 40px 20px; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .why { grid-template-columns: 1fr; }
+      .why-left { padding: 40px 20px; border-right: none; }
+      .why-right { padding: 40px 20px; }
+      .contact-strip { padding: 40px 20px; flex-direction: column; align-items: flex-start; }
+      footer { padding: 20px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Zailand Brand</div>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Wholesale</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contact Us</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <p class="eyebrow">Food Service Supply</p>
+      <h1>Quality supplies.<br><em>Delivered right.</em></h1>
+      <p class="hero-sub">Zailand Brand provides food service businesses with the essential disposables, packaging, and supplies they need — at wholesale prices, with reliable service.</p>
+      <div class="btn-row">
+        <a href="#products" class="btn-primary">Browse Products</a>
+        <a href="#contact" class="btn-secondary">Wholesale Inquiries</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-stack">
+        <div class="stat-card">
+          <div class="stat-label">Product Categories</div>
+          <div class="stat-val">15+</div>
+          <div class="stat-note">Cups, containers, cutlery &amp; more</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Order Type</div>
+          <div class="stat-val">Bulk</div>
+          <div class="stat-note">Wholesale pricing available</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Best for</div>
+          <div class="stat-val">B2B</div>
+          <div class="stat-note">Restaurants, catering &amp; institutions</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="cats" id="products">
+    <p class="section-label">Product categories</p>
+    <div class="cat-grid">
+      <div class="cat-item">
+        <div class="cat-icon">☕</div>
+        <div class="cat-name">Cups &amp; Lids</div>
+        <div class="cat-desc">Hot cups, cold cups, lids, and sleeves in bulk</div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">📦</div>
+        <div class="cat-name">Containers</div>
+        <div class="cat-desc">Deli, hinged, microwaveable &amp; takeout boxes</div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">🍴</div>
+        <div class="cat-name">Cutlery &amp; Napkins</div>
+        <div class="cat-desc">Disposable utensils, straws, and paper napkins</div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">🧤</div>
+        <div class="cat-name">PPE &amp; Gloves</div>
+        <div class="cat-desc">Disposable gloves, aprons, caps, and covers</div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">🍽️</div>
+        <div class="cat-name">Plates &amp; Trays</div>
+        <div class="cat-desc">Paper plates, food trays, and portion cups</div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">🌯</div>
+        <div class="cat-name">Foil &amp; Film</div>
+        <div class="cat-desc">Heavy duty aluminum foil and food service film</div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">🧻</div>
+        <div class="cat-name">Towel &amp; Tissue</div>
+        <div class="cat-desc">Paper towels, bath tissue, and seat covers</div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">➕</div>
+        <div class="cat-name">Miscellaneous</div>
+        <div class="cat-desc">Table covers, guest checks, register rolls &amp; more</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="about">
+    <div class="why-left">
+      <h2 class="why-title">Why food service businesses choose Zailand Brand</h2>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🏆</div>
+          <div>
+            <strong>Consistent quality</strong>
+            <span>Every product is held to strict standards so your operation never skips a beat.</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">💵</div>
+          <div>
+            <strong>Wholesale value</strong>
+            <span>Bulk pricing designed for restaurants, caterers, and institutional buyers.</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🚚</div>
+          <div>
+            <strong>Reliable fulfillment</strong>
+            <span>Fast, dependable delivery so you're never left short on essentials.</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🎧</div>
+          <div>
+            <strong>Dedicated support</strong>
+            <span>Real people ready to help with orders, questions, and custom requests.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-right">
+      <p class="quote">"The essentials your business runs on — handled so you can focus on what you do best."</p>
+      <p class="quote-attr">— Zailand Brand</p>
+    </div>
+  </section>
+
+  <section class="contact-strip" id="contact">
+    <div>
+      <div class="contact-title">Ready to place a wholesale order?</div>
+      <div class="contact-sub">Reach out and we'll get you set up with the right products at the right price.</div>
+    </div>
+    <div class="contact-actions">
+      <span class="contact-email">✉️ hello@zailandbrand.com</span>
+      <a href="mailto:hello@zailandbrand.com" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Zailand Brand</div>
+    <div class="footer-copy">© 2026 Zailand Brand. All rights reserved. · zailandbrand.com</div>
+  </footer>
+
+</body>
+</html>
